@@ -2,14 +2,14 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>Remove Car <a href="{% url 'taxi:car-list' %}">Back</a></h1>
+  <h1>Remove Car</h1>
   <p>
     Are you sure you want to remove the car: {{ car.model }}
-    <a class="btn btn-primary" href="{% url 'taxi:manufacturer-list' %}">Cancel</a>
   </p>
   <form action="" method="post">
     {% csrf_token %}
     {{ form|crispy }}
     <input type="submit" value="Confirm" class="btn btn-danger">
+    <a href="{% url 'taxi:manufacturer-list' %}" class="btn btn-secondary">Cancel</a>
   </form>
 {% endblock %}
